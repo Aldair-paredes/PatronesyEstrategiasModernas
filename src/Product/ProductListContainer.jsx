@@ -7,7 +7,7 @@ const MOCK_PRODUCTS = [
     name: 'Berserk - Tomo 01', 
     description: 'Edición de lujo del estandarte del manga Seinen. Sigue los pasos de Guts, el Guerrero Negro, en un mundo de fantasía oscura.', 
     price: 169, 
-    image: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=500', // Marcador visual de manga
+    image: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=500', 
     inStock: true 
   },
   { 
@@ -15,7 +15,7 @@ const MOCK_PRODUCTS = [
     name: 'Demon Slayer (Kimetsu no Yaiba) - Tomo 23', 
     description: '¡El gran volumen final! La batalla decisiva contra Muzan Kibutsuji llega a su clímax definitivo. Incluye páginas especiales.', 
     price: 149, 
-    image: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=500', 
+    image: 'https://images-na.ssl-images-amazon.com/images/I/81577+E6unL.jpg', 
     inStock: true 
   },
   { 

@@ -1,6 +1,6 @@
 import React from 'react';
-import Card from '../Common/Card';
-import Button from '../Common/Button';
+import Card from '../reusable/Card';
+import Button from '../reusable/Button';
 
 export default function ProductCard({ product, onAddToBag }) {
   const { id, name, description, price, image, inStock } = product;
@@ -26,7 +26,7 @@ export default function ProductCard({ product, onAddToBag }) {
         <Button 
           variant={inStock ? 'primary' : 'secondary'}
           disabled={!inStock}
-          onClick={() => onAddToBag(id)}
+          onClick={() => onAddToBag(product)}
         >
           {inStock ? 'Agregar' : 'Agotado'}
         </Button>
