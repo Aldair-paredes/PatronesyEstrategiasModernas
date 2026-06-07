@@ -1,16 +1,25 @@
-# React + Vite
+# Panini Cómics & Manga
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+El proyecto cumple estrictamente con las convenciones de arquitectura moderna mediante los siguientes módulos:
 
-Currently, two official plugins are available:
+1. **Componentes de Presentación y Contenedores (Ciclo de Vida):** Separación estricta de la interfaz física (`ProductCard`) y la lógica de datos (`ProductListContainer`).
+2. **Context API (Estado Global Simplificado):** Unificación de la lógica del carrito de compras a través de `CartContext`, permitiendo que cualquier componente acceda a los productos seleccionados
+3. **Custom Hooks (Persistencia de Datos):** Implementación de `useLocalStorage` para abstraer la lógica de almacenamiento e impedir la pérdida de datos del carrito al refrescar el navegador.
+4. **Render Props (Componentes Reutilizables):** El componente de búsqueda `Searcher` procesa el filtrado en tiempo real y delega el renderizado de los elementos al padre de forma declarativa.
+5. **Code Splitting (Carga Perezosa):** Uso de `React.lazy()` y `Suspense` para diferir la descarga de la pasarela de pago (`CartCheckout`) hasta que el usuario decida realizar la transacción, aligerando la carga inicial del sitio.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Estructura del Proyecto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+src/
+├── assets/         # Recursos estáticos
+├── context/        # Proveedores de estado global (CartContext)
+├── hooks/          # Hooks personalizados y reutilizables (useLocalStorage)
+├── product/        # Componentes relacionados al negocio de productos
+├── reusable/       # Componentes atómicos de UI (Button, Card, Searcher)
+├── cart/           # Módulos de la pasarela de compras diferida
+├── pages/          # Vistas principales de la aplicación (MainStorePage)
+├── App.jsx         # Punto de entrada y envoltura de proveedores
+└── main.jsx        # Inicialización de React con Vite
